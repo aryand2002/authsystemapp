@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: authpro-django-app
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn authpro.wsgi:application"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: authpro.settings
+      - key: PYTHON_VERSION
+        value: 3.10
